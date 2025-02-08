@@ -66,6 +66,7 @@ fn main() {
                 //println!("{}\n{}\n{}", result, secret_hash, to_hash);
                 if result == secret_hash {
                     shell_state.logged_in = true;
+                    shell_state.set_env_var("USER".to_string(), username.to_string());
                     println!("logged in successfully as {}!", username.trim())
                 }
                 else {
